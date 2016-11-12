@@ -1,0 +1,46 @@
+# dmidecode 3.0
+Scanning /dev/mem for entry point.
+# dmidecode 3.0
+Getting SMBIOS data from sysfs.
+SMBIOS 2.6 present.
+
+Handle 0x0018, DMI type 17, 28 bytes
+Memory Device
+	Array Handle: 0x0016
+	Error Information Handle: No Error
+	Total Width: Unknown
+	Data Width: 65508 bits
+	Size: 2048 MB
+	Form Factor: SODIMM
+	Set: None
+	Locator: DIMM0
+	Bank Locator: BANK 0
+	Type: Unknown
+	Type Detail: Synchronous
+	Speed: 800 MHz
+	Manufacturer: 02FE
+	Serial Number: 6DE9E703
+	Asset Tag: Unknown
+	Part Number: EBJ21UE8BBS0-AE-F 
+	Rank: Unknown
+
+Handle 0x001B, DMI type 17, 28 bytes
+Memory Device
+	Array Handle: 0x0016
+	Error Information Handle: No Error
+	Total Width: Unknown
+	Data Width: 65508 bits
+	Size: 2048 MB
+	Form Factor: SODIMM
+	Set: None
+	Locator: DIMM2
+	Bank Locator: BANK 2
+	Type: Unknown
+	Type Detail: Synchronous
+	Speed: 800 MHz
+	Manufacturer: 02FE
+	Serial Number: 6DF9E703
+	Asset Tag: Unknown
+	Part Number: EBJ21UE8BBS0-AE-F 
+	Rank: Unknown
+

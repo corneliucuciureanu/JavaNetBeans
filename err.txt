@@ -1,0 +1,3 @@
+Eroare intrare/iesire!
+java.io.IOException: Test
+	at ExC4Redirectare.main(ExC4Redirectare.java:31)

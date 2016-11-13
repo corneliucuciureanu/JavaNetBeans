@@ -1,0 +1,51 @@
+
+//                if (j==0) {
+//                   matrice[i][j]=new StringBuilder().append(s[i]).append(t[i]).toString();
+//                    System.out.print("\t ["+i+j+"]-"+s[i]+t[i]+"->"+matrice[i][j]);
+//                }
+//                else {
+////                    boolean accept = true; // var adevar pentru a verifica cele 2 conditii 
+//                    int k =i;               // variabila de incrementare pentru a parcurge s si t .
+//                    do {
+//                    accept = true;
+//                    if (i==0) { // suntem pe prima linie si deci nu avem ce compara pe coloana 
+//                        for(int x=0;x<j;x++)
+//                            if ((matrice[i][x].charAt(0)==s[k]) && (matrice[i][x].charAt(1)==t[k])) {
+//                                k++;
+//                                accept=false;
+//                            }
+//                            else    
+//                                accept =true;
+//                    }
+////                    else {
+////                        for (int x=0;x<i;x++) 
+////                        {
+////                            if (matrice[x][j].charAt(0)==s[i]) 
+////                                accept = false;
+////                            if (matrice[x][j].charAt(1)==t[i])
+////                                accept = false;
+////                        }
+////                    }
+////                        
+//                        
+//                        
+//                    System.out.print("\t ["+i+j+"]-"+  s[i]+t[j]);    
+//                    } while (accept==false) ;    
+                 /*                      // for (int cur=0;cur<i;cur++)
+                   int cur=0, a=0,b=0;
+                   boolean ver=false;
+                   do {
+                        if (matrice[a][b].charAt(0)==s[cur]) 
+                        {
+                            cur++;
+                            
+                        }
+                        else
+                            ver=true;
+                    } while(ver);
+                   matrice[i][j]=new StringBuffer().append(s[cur]).append(t[i]).toString();
+                   */
+                   // System.out.print("\t"+  s[i]+t[j]);
+       //         }
+                
+                //System.out.print("\t"+  s[i]+t[j]);

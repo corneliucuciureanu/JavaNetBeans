@@ -1,0 +1,14 @@
+timpi executie laptop @ 1400 Mhz
+
+ArrayList
+Add: 21
+Get: 16
+Remove: 7345
+
+LinkedList
+Add: 17
+Get: 8228
+Remove: 12
+
+timpi executie desktop @ 2800Mhz X 4 
+

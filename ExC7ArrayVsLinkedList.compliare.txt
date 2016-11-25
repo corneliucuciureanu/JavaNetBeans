@@ -12,3 +12,11 @@ Remove: 12
 
 timpi executie desktop @ 2800Mhz X 4 
 
+ArrayList
+Add: 10
+Get: 5
+Remove: 3395
+LinkedList
+Add: 5
+Get: 4775
+Remove: 5

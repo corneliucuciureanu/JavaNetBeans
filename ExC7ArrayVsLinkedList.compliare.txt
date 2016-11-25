@@ -10,7 +10,7 @@ Add: 17
 Get: 8228
 Remove: 12
 
-timpi executie desktop @ 2800Mhz X 4 
+timpi executie desktop @ 2500Mhz X 4 
 
 ArrayList
 Add: 10

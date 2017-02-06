@@ -16,7 +16,9 @@
  */
 package eu.armcloud.acf;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+
 
 /**
  *
@@ -34,9 +36,9 @@ public class Student  extends Person {
       * Ori nu are nici un proiect si e liber ori e ocupat avand 1 proiect
       */
      final static private int CAPMAX =1;
-     final private int sId;
+     final private int SID;
      
-    Project[] listaPreferinteProiect; 
+    ArrayList<Project> projectList; 
         
     Project proiectSelectat;
 
@@ -46,11 +48,12 @@ public class Student  extends Person {
      * member variable listaPreferinteProiect tale a null value
      */
     public Student(){
-        this.sId = Student.id;
+        this.projectList = new ArrayList<Project>();
+        this.SID = Student.id;
         this.name ="Unknown";
         this.cap = 1;
         Student.id++;
-        this.listaPreferinteProiect= null;        
+               
     }
     
     /**
@@ -60,27 +63,26 @@ public class Student  extends Person {
      * @param name of the student as string 
      */
     public Student(String name) {
-//        this.name = name;
-//        this.cap = 1;
-//        Student.id ++;        
-//        this.listaPreferinteProiect = null;
-           this(name,null);
-        //this.sId = Person.id;
+        this.projectList = new ArrayList<Project>();
+        this.name = name;
+           //this(name,null);
+        this.SID = Person.id;
     }
     
     /**
      * Constructor for Student class with 2 arguments 
      * 
+     * 
      * @param name of the student as string
      * @param listaPreferinteProiect preferences list of project for this student
      */
-    public Student(String name, Project[] listaPreferinteProiect) {
-        this.sId = Student.id;
-        this.name = name;
-        this.cap = 1;
-        Student.id++;
-        this.listaPreferinteProiect = listaPreferinteProiect;        
-    }
+//    public Student(String name, Project[] listaPreferinteProiect) {
+//        this.sId = Student.id;
+//        this.name = name;
+//        this.cap = 1;
+//        Student.id++;
+//        this.listaPreferinteProiect = listaPreferinteProiect;        
+//    }
     
 //    public void addListaPreferinteProject(Project aux) {
 //        if ( this.listaPreferinteProiect != null ) {
@@ -91,12 +93,23 @@ public class Student  extends Person {
 //        
 //    }
 
-    public Project[] getListaPreferinteProiect() {
-        return listaPreferinteProiect;
-    }
-
-    public void setListaPreferinteProiect(Project[] listaPreferinteProiect) {
-        this.listaPreferinteProiect = listaPreferinteProiect;
+//    public Project[] getListaPreferinteProiect() {
+//        return listaPreferinteProiect;
+//    }
+//
+//    public void setListaPreferinteProiect(Project[] listaPreferinteProiect) {
+//        this.listaPreferinteProiect = listaPreferinteProiect;
+//    }
+    
+    /**
+     * Add a new preference to the project list
+     * 
+     * @param p of type project 
+     */
+    public void addProject(Project p) {
+        //System.out.println("Adaugam "+p.toString());
+        projectList.add(p);
+        //cap++;
     }
 
     
@@ -117,6 +130,16 @@ public class Student  extends Person {
     public void setProiectSelectat(Project proiectSelectat) {
         this.proiectSelectat = proiectSelectat;
     }
+    
+    /**
+     * Getter for Student class for ID 
+     * 
+     * @return ID of integer type for Student
+     */
+     @Override
+    public int getId() {
+        return this.SID;
+    }
 
     /**
      * --- a student is free if it has no project 
@@ -136,9 +159,15 @@ public class Student  extends Person {
      */
     @Override
     public String toString(){
-        return "Student "+name+" with id "+sId+" and selected project "+Arrays.toString(listaPreferinteProiect);
+        return "Student "+name+" with id "+SID+projectList;
+                //+" and selected project "+proiectSelectat;  //Arrays.toString(listaPreferinteProiect);
     }
 
+    
+    public String selectedProjectToString(){
+        return "Student "+name+" with id "+SID+" and selected project "+proiectSelectat;  
+    }
+    
     /**
      * Test if 2 Student are equals as name value
      * @return boolean value of true if the name are the same

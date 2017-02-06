@@ -25,7 +25,7 @@ package eu.armcloud.acf;
  */
 public class Project {
 
-    String name = "";
+    private String name = "";
     /**
      * Project capacity as how many students can work in one project
      */
@@ -35,7 +35,7 @@ public class Project {
      * Name of the lecturer supervising this project .
      * Each project has one Lecturer.
      */    
-    String nameLecturer =""; 
+    //String nameLecturer =""; 
 
     /**
      * Default constructor for Project class 
@@ -44,7 +44,7 @@ public class Project {
      *  Use setter to fill the class data after this.
      */
     public Project() {
-        this("Unknown","");
+        this("Unknown",0);
     }
     
     /**
@@ -53,7 +53,7 @@ public class Project {
      * @param name of the project 
      */
     public Project(String name) {
-        this(name,"");
+        this(name,0);
     }
     
     /**
@@ -63,7 +63,10 @@ public class Project {
      * @param cap capacity of the project 
      */
     public Project(String name,int cap) {
-        this(name,cap,"");
+        //this(name,cap,"");
+        this.name = name;
+        this.cap = cap;
+       // System.out.println("constructed "+this.toString());
     }
     
     /**
@@ -74,9 +77,9 @@ public class Project {
      * @param name - name of the project
      * @param nameLecturer - name of the supervising Lecturer
      */
-    public Project(String name,String nameLecturer) {
-        this(name,1,nameLecturer);
-    }
+//    public Project(String name,String nameLecturer) {
+//        this(name,1,nameLecturer);
+//    }
     
     /**
      * Class constructor with 3 arguments 
@@ -85,11 +88,11 @@ public class Project {
      * @param cap - capacity of the project 
      * @param nameLecturer - name of supervising Lecturer
      */
-    public Project(String name, int cap, String nameLecturer) {
-        this.name = name;
-        this.cap = cap;
-        this.nameLecturer=nameLecturer;
-    }
+//    public Project(String name, int cap, String nameLecturer) {
+//        this.name = name;
+//        this.cap = cap;
+//        this.nameLecturer=nameLecturer;
+//    }
     
      
     /**
@@ -133,18 +136,18 @@ public class Project {
      * 
      * @param nameLecturer name of lecturer as String
      */
-    public void setNameLecturer(String nameLecturer) {
-        this.nameLecturer = nameLecturer;  
-    }
+//    public void setNameLecturer(String nameLecturer) {
+//        this.nameLecturer = nameLecturer;  
+//    }
     
     /**
      * Getter for supervising Lecturer name
      * 
      * @return name of this project supervising Lecturer as String
      */
-    public String getLecturer() {
-        return nameLecturer;
-    }
+//    public String getLecturer() {
+//        return nameLecturer;
+//    }
     
     /**
      * Return the name, capacity and name of the Lecturer as String.
@@ -153,7 +156,7 @@ public class Project {
      */
     @Override
     public String toString(){
-        return "Project "+name+" with capacity "+cap+" supervise by "+nameLecturer;
+        return "Project "+name+" with capacity "+cap; // +" supervise by "+nameLecturer;
     }
     
     

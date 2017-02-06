@@ -44,6 +44,17 @@ public abstract class Person {
      */
     String email;    
     
+    protected Person() {
+        id++;
+        
+    }
+    
+    protected Person(String name, String email) {
+        this.name = name;
+        this.       email = email;
+        id++;
+    }
+    
     /**
      * Setter pentru variabila membera name 
      * 
@@ -95,8 +106,8 @@ public abstract class Person {
      * 
      * @return String - convert local variable value tot a string value
      */
-    @Override
-    public abstract String toString(); 
+   // @Override
+   // public abstract String toString(); 
     
     /**
      *  If 2 Person object are equal return true

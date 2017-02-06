@@ -16,6 +16,9 @@
  */
 package eu.armcloud.acf;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author cc@armcloud.eu
@@ -25,33 +28,51 @@ public class Lecturer extends Person {
     /**
      * Each lecturer has also a capacity constraint regarding how many students is he/she willing to supervise.
      */
+    final private int LID;
     private int cap;
     private int capMax=0;
+    List<Project> projectList;
+    List<Student> studentList;
     
-    
-    Student[] listaPreferinteStudent;
+    //Student[] listaPreferinteStudent;
     //Student[] listaStudentiSelectati;
 
-    public Lecturer(String name, int capMax, Student[] listaPreferinteStudent) {
-        Lecturer.id= Person.id++;
-        this.name = name;
-        this.capMax = capMax;
-        this.listaPreferinteStudent = listaPreferinteStudent;
-    }
+//    public Lecturer(String name, int capMax, Student[] listaPreferinteStudent) {
+//        this.projectList = new ArrayList<Project>();
+//        Lecturer.id= Person.id++;
+//        this.name = name;
+//        this.capMax = capMax;
+//        this.listaPreferinteStudent = listaPreferinteStudent;
+//    }
     
     public Lecturer(String name, int capMax) {
-        this(name,capMax,null);
+        //this(name,capMax,null);
+        this.LID = Person.id;
+        this.name = name;
+        this.capMax = capMax;
+        this.projectList = new ArrayList<Project>();
+        this.studentList = new ArrayList<Student>();
     }
     
     public Lecturer(String name) {
-        this(name,0,null);
+        this(name,0);
+        //this.projectList = new ArrayList<Project>();
     } 
     
     public Lecturer() {
         this("Unknown");
+        //this.projectList = new ArrayList<Project>();
     }
             
-
+    public void addProject(Project p) {
+        projectList.add(p);
+        cap++;
+    }
+    
+    public void addStudent(Student s) {
+        studentList.add(s);
+    }
+    
     public int getCapMax() {
         return capMax;
     }
@@ -60,13 +81,13 @@ public class Lecturer extends Person {
         this.capMax = capMax;
     }
 
-    public Student[] getListaPreferinteStudent() {
-        return listaPreferinteStudent;
-    }
-
-    public void setListaPreferinteStudent(Student[] listaPreferinteStudent) {
-        this.listaPreferinteStudent = listaPreferinteStudent;
-    }
+//    public Student[] getListaPreferinteStudent() {
+//        return listaPreferinteStudent;
+//    }
+//
+//    public void setListaPreferinteStudent(Student[] listaPreferinteStudent) {
+//        this.listaPreferinteStudent = listaPreferinteStudent;
+//    }
   
     public int getCapacitate() {
         return cap;
@@ -76,17 +97,16 @@ public class Lecturer extends Person {
         this.cap = cap;
     }
     
-    
-    
+      
     /**
      * Getter for id from Lecturer class 
      * 
-     * @return the int value of id
+     * @return the integer value of id
      */
-//    @Override
-//    public int getId() {
-//        return Lecturer.id;
-//    }
+    @Override
+    public int getId() {
+        return this.LID;
+    }
 
     /**
      * --- a lecturer is free if its capacity has not been reached 
@@ -102,7 +122,7 @@ public class Lecturer extends Person {
     
     @Override
     public String toString(){
-        return "Lecturer "+name+" with capacity "+cap+" and id "+id;
+        return "Lecturer "+name+" with capacity "+capMax+" and id "+this.LID+" Projects "+projectList+" Students "+studentList;
     }
 
     @Override
